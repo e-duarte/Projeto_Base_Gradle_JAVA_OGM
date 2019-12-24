@@ -1,16 +1,20 @@
 package com.example.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.GeneratedValue;
 
 @Entity
 public class Usuario{
-    @Id @GeneratedValue
-    private Long id;
+    @Id
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    @Column(name = "_id")
+    private String id;
     private String username;
     private String password;
-
 
     public String getUsername() {
         return this.username;
