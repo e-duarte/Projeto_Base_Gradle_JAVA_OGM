@@ -1,6 +1,9 @@
 package com.example.models;
 
+// import java.util.List;
+
 import javax.persistence.Column;
+// import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import org.hibernate.annotations.GenericGenerator;
@@ -15,6 +18,9 @@ public class Usuario{
     private String id;
     private String username;
     private String password;
+
+    // @ElementCollection
+    // List<Usuario> amigos;
 
     public String getUsername() {
         return this.username;
@@ -31,6 +37,23 @@ public class Usuario{
     public void setPassword(String password) {
         this.password = password;
     }
+
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    // public List<Usuario> getAmigos() {
+    //     return this.amigos;
+    // }
+
+    // public void setAmigos(List<Usuario> amigos) {
+    //     this.amigos = amigos;
+    // }
 
     @Override
     public String toString(){
